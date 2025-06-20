@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Interview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" autoplay muted playsinline></video>
+    </div>
+    <div id="setup-container">
+        <div id="initial-choice">
+            <h2>How would you like to prepare?</h2>
+            <button id="job-prep-btn" class="button">For a Specific Job</button>
+            <button id="resume-prep-btn" class="button">General Practice</button>
+        </div>
+
+        <div id="job-prep-form" class="form-section hidden">
+            <h3>Prepare for a Specific Job</h3>
+            <p>Please provide the job description and optionally a link to the posting.</p>
+            <textarea id="job-description" placeholder="Paste the job description here..."></textarea>
+            <input type="text" id="job-link" placeholder="Link to job posting (optional)">
+            <label for="resume-upload-job" class="button">Upload Resume</label>
+            <input type="file" id="resume-upload-job" accept=".pdf,.txt" class="hidden">
+        </div>
+
+        <div id="resume-prep-form" class="form-section hidden">
+            <h3>General Practice</h3>
+            <p>Upload your resume and optionally add links to your professional profiles.</p>
+            <label for="resume-upload-general" class="button">Upload Resume</label>
+            <input type="file" id="resume-upload-general" accept=".pdf,.txt" class="hidden">
+            <input type="text" id="github-link" placeholder="GitHub Profile URL (optional)">
+            <input type="text" id="linkedin-link" placeholder="LinkedIn Profile URL (optional)">
+        </div>
+
+        <button id="start-btn" class="hidden">Start Interview</button>
+    </div>
+    <div id="chat-container">
+        <div id="chat-log"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type your answer...">
+            <button id="send-btn">Send</button>
+            <button id="mic-btn">🎤</button>
+        </div>
+    </div>
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+                "pdfjs-dist": "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
